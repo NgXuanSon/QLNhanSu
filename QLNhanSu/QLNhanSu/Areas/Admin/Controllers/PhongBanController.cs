@@ -8,109 +8,109 @@ using System.Web;
 using System.Web.Mvc;
 using QLNhanSu.Models;
 
-namespace QLNhanSu.Controllers
+namespace QLNhanSu.Areas.Admin.Controllers
 {
-    public class KhenThuongController : Controller
+    public class PhongBanController : Controller
     {
         private QLNhanSuDBContext db = new QLNhanSuDBContext();
 
-        // GET: KhenThuong
+        // GET: Admin/PhongBan
         public ActionResult Index()
         {
-            return View(db.KhenThuongs.ToList());
+            return View(db.PhongBans.ToList());
         }
 
-        // GET: KhenThuong/Details/5
+        // GET: Admin/PhongBan/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhenThuong khenThuong = db.KhenThuongs.Find(id);
-            if (khenThuong == null)
+            PhongBan phongBan = db.PhongBans.Find(id);
+            if (phongBan == null)
             {
                 return HttpNotFound();
             }
-            return View(khenThuong);
+            return View(phongBan);
         }
 
-        // GET: KhenThuong/Create
+        // GET: Admin/PhongBan/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: KhenThuong/Create
+        // POST: Admin/PhongBan/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TenNV,DanhHieuKhenthuong,MaSoKhenThuong,TienThuong")] KhenThuong khenThuong)
+        public ActionResult Create([Bind(Include = "MaPB,TenPB")] PhongBan phongBan)
         {
             if (ModelState.IsValid)
             {
-                db.KhenThuongs.Add(khenThuong);
+                db.PhongBans.Add(phongBan);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(khenThuong);
+            return View(phongBan);
         }
 
-        // GET: KhenThuong/Edit/5
+        // GET: Admin/PhongBan/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhenThuong khenThuong = db.KhenThuongs.Find(id);
-            if (khenThuong == null)
+            PhongBan phongBan = db.PhongBans.Find(id);
+            if (phongBan == null)
             {
                 return HttpNotFound();
             }
-            return View(khenThuong);
+            return View(phongBan);
         }
 
-        // POST: KhenThuong/Edit/5
+        // POST: Admin/PhongBan/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TenNV,DanhHieuKhenthuong,MaSoKhenThuong,TienThuong")] KhenThuong khenThuong)
+        public ActionResult Edit([Bind(Include = "MaPB,TenPB")] PhongBan phongBan)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(khenThuong).State = EntityState.Modified;
+                db.Entry(phongBan).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(khenThuong);
+            return View(phongBan);
         }
 
-        // GET: KhenThuong/Delete/5
+        // GET: Admin/PhongBan/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhenThuong khenThuong = db.KhenThuongs.Find(id);
-            if (khenThuong == null)
+            PhongBan phongBan = db.PhongBans.Find(id);
+            if (phongBan == null)
             {
                 return HttpNotFound();
             }
-            return View(khenThuong);
+            return View(phongBan);
         }
 
-        // POST: KhenThuong/Delete/5
+        // POST: Admin/PhongBan/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            KhenThuong khenThuong = db.KhenThuongs.Find(id);
-            db.KhenThuongs.Remove(khenThuong);
+            PhongBan phongBan = db.PhongBans.Find(id);
+            db.PhongBans.Remove(phongBan);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

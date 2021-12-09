@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QLNhanSu.Models.BangLuong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Sách Bảng Lương</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Luong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phucap)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Luong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phucap)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TenNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TenNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TenNV })
+        </td>
+    </tr>
+}
+
+</table>

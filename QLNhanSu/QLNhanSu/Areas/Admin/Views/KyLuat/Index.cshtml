@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QLNhanSu.Models.KyLuat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh sách kỷ luật</h2>
+
+<p>
+    @Html.ActionLink("Thêm Mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiKyLuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MucDoKyLuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LyDo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiHinhPhat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiKyLuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MucDoKyLuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LyDo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHinhPhat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TenNV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TenNV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TenNV })
+        </td>
+    </tr>
+}
+
+</table>

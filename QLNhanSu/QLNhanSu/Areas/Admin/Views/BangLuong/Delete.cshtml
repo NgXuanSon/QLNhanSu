@@ -1,0 +1,41 @@
+﻿@model QLNhanSu.Models.BangLuong
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa bảng lương</h2>
+
+<h3>Bạn muốn xóa bảng lương?</h3>
+<div>
+    <h4>BangLuong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Luong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phucap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phucap)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

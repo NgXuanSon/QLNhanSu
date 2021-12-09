@@ -1,0 +1,57 @@
+﻿@model QLNhanSu.Models.KyLuat
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn chắc chắn muốn xóa?</h3>
+<div>
+    <h4>KyLuat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiKyLuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiKyLuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MucDoKyLuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MucDoKyLuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LyDo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LyDo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiHinhPhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHinhPhat)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

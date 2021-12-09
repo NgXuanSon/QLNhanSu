@@ -1,0 +1,43 @@
+﻿@model QLNhanSu.Models.KhenThuong
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>KhenThuong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhHieuKhenthuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhHieuKhenthuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSoKhenThuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSoKhenThuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienThuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienThuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TenNV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

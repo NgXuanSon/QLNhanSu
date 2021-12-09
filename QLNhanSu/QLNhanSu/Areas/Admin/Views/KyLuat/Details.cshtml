@@ -1,0 +1,51 @@
+﻿@model QLNhanSu.Models.KyLuat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>KyLuat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiKyLuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiKyLuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MucDoKyLuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MucDoKyLuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LyDo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LyDo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiHinhPhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHinhPhat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TenNV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

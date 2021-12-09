@@ -128,14 +128,22 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BangLuongController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChamCongController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChucVuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KyLuatController.cs" />
+    <Compile Include="Controllers\KhenThuongsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BangLuongController.cs" />
     <Compile Include="Controllers\ChamCongController.cs" />
     <Compile Include="Controllers\ChucVuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KhenThuongController.cs" />
+    <Compile Include="Areas\Admin\Controllers\KhenThuongController.cs" />
     <Compile Include="Controllers\KyLuatController.cs" />
-    <Compile Include="Controllers\NhanVienController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NhanVienController.cs" />
     <Compile Include="Controllers\PhongBanController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
@@ -183,6 +191,44 @@
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongBan\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongBan\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongBan\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongBan\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PhongBan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NhanVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KhenThuong\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KhenThuong\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KhenThuong\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KhenThuong\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KhenThuong\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\KyLuat\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\KyLuat\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\KyLuat\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\KyLuat\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\KyLuat\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChucVu\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChucVu\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ChucVu\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChucVu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChucVu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChamCong\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChamCong\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ChamCong\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChamCong\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChamCong\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BangLuong\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BangLuong\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BangLuong\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BangLuong\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BangLuong\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -595,6 +641,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

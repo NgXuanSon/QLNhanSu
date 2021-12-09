@@ -37,12 +37,13 @@ namespace QLNhanSu.Controllers
                     return RedirectToLocal(returnUrl);
                 }
             }
-            return View(acc);
+            
+            return View();
         }
         public ActionResult Logoff()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
         //Kiểm tra xem returnUrl có thuộc hệ thống hay không
         private ActionResult RedirectToLocal(string returnUrl)
@@ -53,7 +54,7 @@ namespace QLNhanSu.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "HomeAdmin", new { Area = "Admin" });
             }
         }
     }
