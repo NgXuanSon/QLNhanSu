@@ -12,6 +12,7 @@ namespace QLNhanSu.Controllers
     {
         // GET: Account
        QLNhanSuDBContext db = new QLNhanSuDBContext();
+        //cho phép action truy cập không cần kiểm tra đăng nhập
         [AllowAnonymous]
         // GET: Account
         public ActionResult Login(string returnUrl)
@@ -40,6 +41,7 @@ namespace QLNhanSu.Controllers
             
             return View();
         }
+        //đăng xuất khỏi chương trình
         public ActionResult Logoff()
         {
             FormsAuthentication.SignOut();
